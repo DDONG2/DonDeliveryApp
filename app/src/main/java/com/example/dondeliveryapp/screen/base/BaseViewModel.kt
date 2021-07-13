@@ -13,7 +13,7 @@ abstract class BaseViewModel :ViewModel(){
     open  fun fetchData(): Job = viewModelScope.launch {  }
 
     open fun storeState(stateBundle: Bundle){
-        this.stateBundle = stateBundle
+        this.stateBundle = stateBundle //세이브 인스턴스
     }
 
 }

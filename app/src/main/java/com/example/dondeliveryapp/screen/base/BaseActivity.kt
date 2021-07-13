@@ -24,7 +24,7 @@ abstract class BaseActivity<VM: BaseViewModel, VB: ViewBinding> : AppCompatActiv
     }
 
     open fun initState(){
-        initViews()
+        initViews() // 뷰 초기화
         fetchJob = viewModel.fetchData()
         observeData()
     }
