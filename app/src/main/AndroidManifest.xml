@@ -12,7 +12,8 @@
         android:supportsRtl="true"
         android:name=".DonApplication"
         android:theme="@style/Theme.DonDeliveryApp">
-        <activity android:name=".screen.main.MainActivity">
+        <activity android:name=".presenter.main.MainActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

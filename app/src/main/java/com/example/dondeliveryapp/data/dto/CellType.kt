@@ -1,4 +1,4 @@
-package com.example.dondeliveryapp.model
+package com.example.dondeliveryapp.data.dto
 
 enum class CellType {
 

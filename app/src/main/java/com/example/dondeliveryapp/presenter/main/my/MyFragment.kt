@@ -1,14 +1,12 @@
-package com.example.dondeliveryapp.screen.main.my
+package com.example.dondeliveryapp.presenter.main.my
 
-import com.example.dondeliveryapp.databinding.FragmentHomeBinding
+import androidx.fragment.app.viewModels
 import com.example.dondeliveryapp.databinding.FragmentMyBinding
-import com.example.dondeliveryapp.screen.base.BaseFragment
-import com.example.dondeliveryapp.screen.main.home.HomeFragment
-import org.koin.android.viewmodel.ext.android.viewModel
+import com.example.dondeliveryapp.presenter.base.BaseFragment
 
 class MyFragment : BaseFragment<MyViewModel, FragmentMyBinding>() {
 
-    override val viewModel: MyViewModel by viewModel<MyViewModel>()
+    override val viewModel: MyViewModel by viewModels<MyViewModel>()
 
     override fun getViewBinding(): FragmentMyBinding = FragmentMyBinding.inflate(layoutInflater)
 

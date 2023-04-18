@@ -1,4 +1,4 @@
-package com.example.dondeliveryapp.screen.main
+package com.example.dondeliveryapp.presenter.main
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -6,8 +6,8 @@ import android.view.MenuItem
 import androidx.fragment.app.Fragment
 import com.example.dondeliveryapp.R
 import com.example.dondeliveryapp.databinding.ActivityMainBinding
-import com.example.dondeliveryapp.screen.main.home.HomeFragment
-import com.example.dondeliveryapp.screen.main.my.MyFragment
+import com.example.dondeliveryapp.presenter.main.home.HomeFragment
+import com.example.dondeliveryapp.presenter.main.my.MyFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemSelectedListener {

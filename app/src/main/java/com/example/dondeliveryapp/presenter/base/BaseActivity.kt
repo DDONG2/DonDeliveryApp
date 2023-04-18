@@ -1,16 +1,12 @@
-package com.example.dondeliveryapp.screen.base
+package com.example.dondeliveryapp.presenter.base
 
 import android.os.Bundle
 import android.os.PersistableBundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
-import androidx.fragment.app.Fragment
 import androidx.viewbinding.ViewBinding
 import kotlinx.coroutines.Job
 
-abstract class BaseFragment<VM: BaseViewModel, VB: ViewBinding> : Fragment(){
+abstract class BaseActivity<VM: BaseViewModel, VB: ViewBinding> : AppCompatActivity(){
 
     abstract  val viewModel: VM
 
@@ -20,21 +16,15 @@ abstract class BaseFragment<VM: BaseViewModel, VB: ViewBinding> : Fragment(){
 
     private lateinit var fetchJob: Job
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    override fun onCreate(savedInstanceState: Bundle?, persistentState: PersistableBundle?) {
+        super.onCreate(savedInstanceState, persistentState)
         binding = getViewBinding()
-        return return binding.root
-    }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
+        setContentView(binding.root)
         initState()
     }
 
     open fun initState(){
-        arguments?.let {
-            viewModel.storeState(it)
-        }
-        initViews()
+        initViews() // 뷰 초기화
         fetchJob = viewModel.fetchData()
         observeData()
     }

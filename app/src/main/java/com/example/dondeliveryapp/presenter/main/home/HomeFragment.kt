@@ -1,12 +1,12 @@
-package com.example.dondeliveryapp.screen.main.home
+package com.example.dondeliveryapp.presenter.main.home
 
+import androidx.fragment.app.viewModels
 import com.example.dondeliveryapp.databinding.FragmentHomeBinding
-import com.example.dondeliveryapp.screen.base.BaseFragment
-import org.koin.android.viewmodel.ext.android.viewModel
+import com.example.dondeliveryapp.presenter.base.BaseFragment
 
 class HomeFragment : BaseFragment<HomeViewModel, FragmentHomeBinding>() {
 
-    override val viewModel: HomeViewModel by viewModel<HomeViewModel>()
+    override val viewModel: HomeViewModel by viewModels<HomeViewModel>()
 
     override fun getViewBinding(): FragmentHomeBinding = FragmentHomeBinding.inflate(layoutInflater)
 

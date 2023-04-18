@@ -1,4 +1,4 @@
-package com.example.dondeliveryapp.screen.base
+package com.example.dondeliveryapp.presenter.base
 
 import android.os.Bundle
 import androidx.lifecycle.ViewModel

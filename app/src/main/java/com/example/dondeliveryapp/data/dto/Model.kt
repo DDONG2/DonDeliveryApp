@@ -1,4 +1,4 @@
-package com.example.dondeliveryapp.model
+package com.example.dondeliveryapp.data.dto
 
 import android.annotation.SuppressLint
 import androidx.annotation.NonNull
@@ -6,7 +6,8 @@ import androidx.recyclerview.widget.DiffUtil
 
 abstract class Model(
     open val id: Long,
-    open val type: CellType)
+    open val type: CellType
+)
 {
     companion object {
         val DIFF_CALLBACK: DiffUtil.ItemCallback<Model> = object : DiffUtil.ItemCallback<Model>() {
