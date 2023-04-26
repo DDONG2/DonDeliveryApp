@@ -23,17 +23,29 @@ abstract class RetrofitDataModule {
     abstract fun bindDataFlowRepository(dataFlowRepositoryImpl: DataFlowRepositoryImpl): DataFlowRepository
 
     companion object {
+
+        private const val TMAP_URL = "https://apis.openapi.sk.com"
+        private const val FOOD_URL = "https://60abc8f15a4de40017ccae3e.mockapi.io/"
+
         @Provides
         @ViewModelScoped
-        fun provideApiService(): DataService =
+        fun provideTmapApiService(): DataService =
             Retrofit.Builder()
-                .baseUrl(BASE_URL)
+                .baseUrl(TMAP_URL)
                 .addConverterFactory(GsonConverterFactory.create())
                 .client(client)
                 .build()
                 .create(DataService::class.java)
 
-        private const val BASE_URL = "https://api.github.com/"
+        @Provides
+        @ViewModelScoped
+        fun provideFoodApiService(): DataService =
+            Retrofit.Builder()
+                .baseUrl(FOOD_URL)
+                .addConverterFactory(GsonConverterFactory.create())
+                .client(client)
+                .build()
+                .create(DataService::class.java)
 
         private val client by lazy {
             OkHttpClient.Builder().apply {
